@@ -1,4 +1,4 @@
-## ERA CALENDAR FRONTED FRONTEND ##
+## ERA CALENDAR FRONTED ##
 ### Watch mode ###
 
     npm run start:dev
