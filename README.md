@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ERA CALENDAR FRONTED FRONTEND #
 ## Watch mode##
 
