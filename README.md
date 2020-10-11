@@ -1,2 +1,4 @@
-# era-calendar-frontend
-# era-calendar-frontend
+# ERA CALENDAR FRONTED FRONTEND #
+## Watch mode##
+
+    npm run start:dev
