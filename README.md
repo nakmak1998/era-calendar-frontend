@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-# ERA CALENDAR FRONTED FRONTEND #
-## Watch mode##
+## ERA CALENDAR FRONTED FRONTEND ##
+### Watch mode###
 
     npm run start:dev
 
-# DEV build #
+### DEV build ###
 
     npm run build:dev
