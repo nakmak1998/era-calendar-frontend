@@ -2,6 +2,7 @@ import React from 'react';
 import "./App.css";
 import CubeGrid  from './CubeGrid';
 import {BrowserRouter as Router} from 'react-router-dom';
+import Grid from './Grid';
 
 interface AppProps{
 
@@ -21,9 +22,9 @@ export default class App extends React.Component<AppProps,AppState>{
     }
     public render():React.ReactNode{
         return <div className="appFrame">
-            <CubeGrid>
+            <Grid>
                 
-            </CubeGrid>
+            </Grid>
             </div>
 
     }
