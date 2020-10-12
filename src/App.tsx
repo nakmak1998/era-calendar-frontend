@@ -4,12 +4,7 @@ import CubeGrid  from './CubeGrid';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 interface AppProps{
-    front?:React.ReactNode;
-    back?:React.ReactNode;
-    left?:React.ReactNode;
-    right?:React.ReactNode;
-    bottom?:React.ReactNode;
-    top?:React.ReactNode;
+
 }
 
 interface AppState{

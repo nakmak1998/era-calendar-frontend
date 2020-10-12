@@ -1,7 +1,15 @@
 
 .scene {
-    width: 200px;
-    height: 200px;
-    margin: 80px;
-    perspective: 400px;
+    position:absolute;
+    width: 600px;
+    height: 600px;
+    background-color: red;
+    margin-top:-300px;
+    margin-left:-300px;
+    left:50vw;
+    top:50vh;
+}
+
+.cube{
+    
 }

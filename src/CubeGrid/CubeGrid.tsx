@@ -2,8 +2,12 @@ import React from 'react';
 import "./CubeGrid.css";
 
 interface CubeGridProps{
-    children?:React.ReactNode;
-    rotating?:boolean;
+    front?:React.ReactNode;
+    back?:React.ReactNode;
+    left?:React.ReactNode;
+    right?:React.ReactNode;
+    bottom?:React.ReactNode;
+    top?:React.ReactNode;
 }
 
 interface CubeGridState{
@@ -16,15 +20,9 @@ class CubeGrid extends React.Component<CubeGridProps,CubeGridState>
         super(props);
     }
     public render():React.ReactNode{
+        const {back,bottom,children,front,left,right,top}=this.props;
         return <div className="scene">
-                <div className="cube">
-                    <div className="cube__face cube__face--front">front</div>
-                    <div className="cube__face cube__face--back">back</div>
-                    <div className="cube__face cube__face--right">right</div>
-                    <div className="cube__face cube__face--left">left</div>
-                    <div className="cube__face cube__face--top">top</div>
-                    <div className="cube__face cube__face--bottom">bottom</div>
-                </div>
+            
         </div>;
     }
 }
