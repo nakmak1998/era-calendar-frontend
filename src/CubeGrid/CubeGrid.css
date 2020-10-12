@@ -4,12 +4,10 @@
     width: 600px;
     height: 600px;
     background-color: red;
-    margin-top:-300px;
-    margin-left:-300px;
-    left:50vw;
-    top:50vh;
+    grid-column-start: 2;
 }
 
-.cube{
-    
-}
+
+
+
+
