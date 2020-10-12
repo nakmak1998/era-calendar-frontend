@@ -60,6 +60,14 @@
     background-color:rgb(250, 176, 16);
 }
 
+.cube__face--top{
+    position:absolute;
+    width: 400px;
+    height: 400px;
+    transform: rotateX(-90deg) translateZ(-200px);
+    background-color:rgb(160, 158, 153);
+}
+
 
 
 

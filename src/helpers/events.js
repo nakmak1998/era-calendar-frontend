@@ -1,3 +1,4 @@
+
 async function downloadHtml(url) {
     let resposnse = await fetch(url);
     return await resposnse.text()
@@ -6,6 +7,7 @@ const getDocument = (text) => {
     const parser = new DOMParser();
 	return parser.parseFromString(text, 'text/html');
 };
+
 const extractEvents = (text) => {
     const document = getDocument(text);
     let cards = document.querySelectorAll('a.event_card');
@@ -15,6 +17,7 @@ const extractEvents = (text) => {
             //image: ...
             // type: card.querySelector('.event_type').innerText,
             title: card.querySelector('h1').innerText,
+            /*date: card.querySelector('.event_date').innerText,*/
             date: card.querySelector('.event_date').innerText,
             time: card.querySelector('.event_time').innerText,
         });
