@@ -1,3 +1,3 @@
 import { createBrowserHistory } from 'history';
 
-export const histoty=createBrowserHistory();
+export const history=createBrowserHistory();

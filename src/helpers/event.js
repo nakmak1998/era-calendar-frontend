@@ -1,33 +1,33 @@
 
-async function downloadHtml(url) {
+export async function downloadHtml(url) {
     let resposnse = await fetch(url);
     return await resposnse.text()
 };
-const getDocument = (text) => {
+export const getDocument = (text) => {
     const parser = new DOMParser();
 	return parser.parseFromString(text, 'text/html');
 };
 
-const extractEvents = (text) => {
+export const extractEvents = (text) => {
     const document = getDocument(text);
     let cards = document.querySelectorAll('a.event_card');
-    let events = []
-    for (let [key, card] of Object.entries(cards)) {
-        events.push({
-            //image: ...
-            // type: card.querySelector('.event_type').innerText,
-            title: card.querySelector('h1').innerText,
-            /*date: card.querySelector('.event_date').innerText,*/
-            date: card.querySelector('.event_date').innerText,
-            time: card.querySelector('.event_time').innerText,
-        });
-    }
+    let events=[]
+    cards.forEach((card)=>{
+            events.push({
+                //image: ...
+                // type: card.querySelector('.event_type').innerText,
+                title: card.querySelector('h1').innerText,
+                /*date: card.querySelector('.event_date').innerText,*/
+                date: card.querySelector('.event_date').innerText,
+                time: card.querySelector('.event_time').innerText,
+            });
+    });
 
     return events
 };
 
-const url = 'https://www.era-tehnopolis.ru/events/?time=future';
-const defaultEvents = [
+export const url = 'https://www.era-tehnopolis.ru/events/?time=future';
+export const defaultEvents = [
     {
         title: 'II Всероссийская научно-техническая конференция «Состояние и перспективы развития современной науки по направлению «Технологии энергообеспечения. Аппараты и машины жизнеобеспечения»',
         date: '17 сентября 2020г.',
@@ -45,7 +45,7 @@ const defaultEvents = [
     },
 ]
 
-async function getEvents() {
+export async function getEvents() {
     try {
         const html = await downloadHtml(url);
         const events = getEvents(html);
@@ -55,4 +55,5 @@ async function getEvents() {
         return defaultEvents;
     }
 }
+
 
