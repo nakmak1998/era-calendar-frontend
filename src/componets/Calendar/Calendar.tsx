@@ -1,5 +1,7 @@
 import React from 'react';
 import "./Calendar.css";
+import MainDateViver from './MainDateViewer';
+import MainCalendar from './MainCalendar';
 
 
 interface CalendarProps{
@@ -16,7 +18,9 @@ class Calendar extends React.Component<CalendarProps,CalendarState>{
         super(props);
     }
     public render():React.ReactNode{
-        return <div className="calendarContainer"></div>;
+        return <div className="calendarContainer">
+            <MainDateViver />
+        </div>;
     }
 }
 

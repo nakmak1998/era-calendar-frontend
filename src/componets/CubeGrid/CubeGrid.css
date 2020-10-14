@@ -1,71 +1,79 @@
 
+
+
+:root{
+    --translate-top-z:calc(100vw-(100vh));
+}
+
 .scene {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  top:0%;
-  left:0%;
-  perspective: 1000px;
-  perspective-origin: center 7%;
+  transform-style: preserve-3d;
+  perspective: 0px;
+  perspective-origin: center -10%;
+}
+
+.cubeWrapper{
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+    position: absolute;
 }
 
 
 .cube{
     transform-style: preserve-3d;
     position:absolute;
-    width: 400px;
-    height: 400px;
-    top:50%;
-    left:50%;
-    margin-top:-200px;
-    margin-left:-200px;
+    width: 100vw;
+    height: 100vh;
     cursor: pointer;
 }
 
 .cube__face{
     position:absolute;
-    width: 400px;
-    height: 400px;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 .cube__face--front{
     position:absolute;
-    width: 400px;
-    height: 400px;
-    transform:translateZ(200px);
+    width: 100vw;
+    min-height: 100vh;
     background-color: aqua;
+    transform: translateZ(50vw);
 }
 
 .cube__face--back{
     position:absolute;
-    width: 400px;
-    height: 400px;
-    transform: translateZ(-200px);
+    width: 100vw;
+    min-height: 100vh;
+    transform: translateZ(-50vw);
     background-color: yellow;
 }
 
 .cube__face--right{
     position:absolute;
-    width: 400px;
-    height: 400px;
-    transform: rotateY(-90deg) translateZ(200px);
+    width: 100vw;
+    min-height: 100vh;
+    transform: translateX(-50vw) rotateY(90deg);
     background-color:lightgreen;
 }
 
 .cube__face--left{
     position:absolute;
-    width: 400px;
-    height: 400px;
-    transform: rotateY(-90deg) translateZ(-200px);
+    width: 100vw;
+    min-height: 100vh;
+    transform: translateX(50vw) rotateY(90deg);
     background-color:rgb(250, 176, 16);
 }
 
 .cube__face--top{
     position:absolute;
-    width: 400px;
-    height: 400px;
-    transform: rotateX(-90deg) translateZ(-200px);
-    background-color:rgb(160, 158, 153);
+    width: 100vw;
+    height: 100vw;
+    transform: translateY(-50vw) rotateX(90deg);
+    background-color:rgb(8, 24, 248);
 }
 
 

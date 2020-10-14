@@ -38,21 +38,21 @@ class Cube extends React.Component<CubeProps,CubeState>
         this.onMouseMove=this.onMouseMove.bind(this);
         this.onMouseDown=this.onMouseDown.bind(this);
         this.onMouseUp=this.onMouseUp.bind(this);
+        this.onMouseWheel=this.onMouseWheel.bind(this);
     }
     private timer():void{
         let newAngle:number=this.state.angle+0.2;
         this.setState({angle:newAngle});
-        console.log(newAngle);    
     }
     public componentDidMount():any{
-        const intervalId=window.setInterval(this.timer,16.7);
-        this.setState({intervalId:intervalId});
+       // const intervalId=window.setInterval(this.timer,16.7);
+        //this.setState({intervalId:intervalId});
     }
     public componentDidUpdate():void{
         
     }
     public componentWillUnmount():void{
-        clearInterval(this.state.intervalId);
+        //clearInterval(this.state.intervalId);
     }
     private onMouseMove(evt:React.MouseEvent<HTMLDivElement>):void{
         const newAngle:number=this.state.angle+evt.movementX;
@@ -72,21 +72,33 @@ class Cube extends React.Component<CubeProps,CubeState>
             mouseUp:undefined
         });
     }
+    private onMouseWheel(evt:React.WheelEvent<HTMLDivElement>){
+        const newDistance:number=this.state.distanceCube+0.5*evt.deltaY;
+        console.log(newDistance);
+        this.setState({
+            distanceCube:newDistance
+        });
+    }
     public render():React.ReactNode{
         const {back,bottom,children,front,left,right,top,style}=this.props;
-        const {angle,mouseMove,mouseUp} =this.state;
+        const {angle,mouseMove,mouseUp,distanceCube} =this.state;
             return <div className="scene" 
                                           onMouseUp={mouseUp} 
                                           onMouseMove={mouseMove}
-                                          onMouseDown={this.onMouseDown}>
-                <div className="cube" style={
-                    { transform:`rotateY(${angle}deg)`,}} >
-                    <div className="cube__face--front"></div>
-                    <div className="cube__face--right"></div>
-                    <div className="cube__face--left"></div>
-                    <div className="cube__face--back"></div>
-                    <div className="cube__face--top"></div>
-                    <div className="cube__face--bottom"></div>
+                                          onMouseDown={this.onMouseDown}
+                                          onWheel={this.onMouseWheel}>
+                <div className="cubeWrapper" style={{
+                    transform:`translateZ(${2*distanceCube}px) translateY(${-0.5*distanceCube}px)`
+                }}>
+                    <div className="cube" style={
+                        { transform:`rotateY(${angle}deg)`
+                        }} >
+                        <div className="cube__face--front">{front}</div>
+                        <div className="cube__face--back"></div>
+                        <div className="cube__face--right"></div>
+                        <div className="cube__face--left"></div>
+                        <div className="cube__face--top"></div>
+                    </div>
                 </div>
         </div>;
     }

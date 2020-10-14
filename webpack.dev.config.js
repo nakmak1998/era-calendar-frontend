@@ -74,6 +74,7 @@ module.exports={
         port: APP_PORT,
         contentBase:path.join(__dirname,'public'),
         watchContentBase:true,
+        historyApiFallback: true,
         progress:true
     },
     plugins:pluginList
