@@ -9,7 +9,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    top:5%;
+    top:20%;
     width: 50%;
     height: 70%;
 }
@@ -18,7 +18,7 @@
     display: block;
     font-family: 'Fira Sans', sans-serif;
     color:white;
-    font-size:100%;
+    font-size:2.5em;
     text-align: center;
     align-items: center;
     border-color: yellow;
@@ -29,7 +29,7 @@
     font-family: 'Rubik', sans-serif;
     text-align:center;
     color:white;
-    font-size:calc(100%+2.5em);
+    font-size:7.5em;
     bottom: 0;
 }
 
