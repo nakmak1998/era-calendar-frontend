@@ -10,7 +10,7 @@
   height: 100vh;
   position: absolute;
   transform-style: preserve-3d;
-  perspective: 0px; /* perspective:2000px*/
+  perspective:2000px /*2000px*/;
   perspective-origin: center -10%;
 }
 

@@ -88,7 +88,7 @@ class Cube extends React.Component<CubeProps,CubeState>
                                           onMouseDown={this.onMouseDown}
                                           onWheel={this.onMouseWheel}>
                 <div className="cubeWrapper" style={{
-                    transform:`translateZ(${2*distanceCube}px) translateY(${-0.5*distanceCube}px)`
+                    transform:`translateZ(${-4000}px) translateY(${1000}px)`
                 }}>
                     <div className="cube" style={
                         { transform:`rotateY(${angle}deg)`

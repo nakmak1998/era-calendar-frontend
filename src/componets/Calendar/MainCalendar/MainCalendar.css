@@ -1,8 +1,24 @@
 
 .calendar{
-    display:grid;
     position: relative;
-    grid-template-rows: repeat(7,1fr);
-    grid-column-start: 1;
-    background-color: white;
+    border-color: orange;
+    border-style: solid;
+    border-radius: 25px;
 }
+
+.changer{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+}
+
+.arrow{
+    background-size: 100% 100%;
+    background-image: url("../../../../assets/arrow.png");
+    width:30px;
+    height: 30px;
+    
+}
+
+
+
