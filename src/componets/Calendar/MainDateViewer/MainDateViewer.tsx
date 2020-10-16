@@ -1,17 +1,22 @@
 import React from 'react';
 import "./MainDateViewer.css";
+import {  } from '../../../helpers/weather-api';
 
 interface MainDateViewerProps{
-
+    date?:Date;
 }
 
 interface MainDateViewerState{
-
+        temperature:number,
+        icon:string
 }
 
 class MainDateViewer extends React.Component<MainDateViewerProps,MainDateViewerState>{
     constructor(props:MainDateViewerProps){
         super(props);
+    }
+    public async componentDidMount():Promise<void>{
+
     }
     public render():React.ReactNode{
         return <div className="dateViewer">

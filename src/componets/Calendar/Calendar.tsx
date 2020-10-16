@@ -20,6 +20,7 @@ class Calendar extends React.Component<CalendarProps,CalendarState>{
     public render():React.ReactNode{
         return <div className="calendarContainer">
             <MainDateViver />
+            <MainCalendar />
         </div>;
     }
 }

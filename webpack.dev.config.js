@@ -2,6 +2,9 @@ const path=require('path');
 const { CleanWebpackPlugin }=require('clean-webpack-plugin');
 const HtmlWebpackPlugin=require('html-webpack-plugin');
 const MiniCssExtractPlugin=require('mini-css-extract-plugin');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const SRC_PATH=path.resolve(__dirname,"src");
 const BUILD_PATH=path.resolve(__dirname,"dist");
