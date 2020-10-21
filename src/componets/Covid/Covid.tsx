@@ -1,21 +1,14 @@
 import React from 'react';
 import './Covid.css';
 import { getCovidStatistic } from '../../helpers/covid';
-
-
-interface Region {
-    region: string,
-    infected: number,
-    recovered: number,
-    deceased: number,
-}
+import { Region, RegionData} from './Region';
 
 interface StatisticState {
     infected: number,
     recovered: number,
     deceased: number,
     tested: number,
-    infectedByRegion: Region[],
+    infectedByRegion: RegionData[],
 }
 
 interface CovidProps {
@@ -42,8 +35,7 @@ class Covid extends React.Component<CovidProps, StatisticState> {
             tested: response.tested,
             infectedByRegion: response.infectedByRegion,
         })
-        this.setState({infectedByRegion : this.state.infectedByRegion.sort((a, b) => b.infected - a.infected)}) 
-        console.log(this.state.infectedByRegion)
+        this.setState({ infectedByRegion: this.state.infectedByRegion.sort((a, b) => b.infected - a.infected) })
     }
     public render(): React.ReactNode {
         return (
@@ -59,37 +51,29 @@ class Covid extends React.Component<CovidProps, StatisticState> {
                             <div className='item-desc'>Тестов</div>
                         </div>
                         <div className='common-info-item'>
-                            <div className='item-space'>{this.state.deceased}</div> 
+                            <div className='item-space'>{this.state.deceased}</div>
                             <div className='item-desc'>Смертей</div>
                         </div>
                         <div className='common-info-item'>
-                            <div className='item-space'>{this.state.recovered}</div> 
+                            <div className='item-space'>{this.state.recovered}</div>
                             <div className='item-desc'>Выздоровело</div>
                         </div>
                         <div className='common-info-item'>
-                            <div className='item-space'>{this.state.infected}</div> 
+                            <div className='item-space'>{this.state.infected}</div>
                             <div className='item-desc'>Подтверждено</div>
                         </div>
                     </div>
                 </div>
                 <div className='region-info-first region-info'>
                     <div className='regions'>
-                        {this.state.infectedByRegion.slice(0, 10).map(el => (
-                            <div className='region' key={el.region}>
-                                <div className='region-title'>{el.region}</div>
-                                <div className='region-data'>{el.infected}</div>
-                            </div>
-                        ))}
+                        <Region infectedByRegion={this.state.infectedByRegion.slice(0, 10)} />
+                        
                     </div>
                 </div>
                 <div className='region-info-second region-info'>
                     <div className='regions'>
-                        {this.state.infectedByRegion.slice(10, 20).map(el => (
-                            <div className='region' key={el.region}>
-                                <div className='region-title'>{el.region}</div>
-                                <div className='region-data'>{el.infected}</div>
-                            </div>
-                        ))}
+                        <Region infectedByRegion={this.state.infectedByRegion.slice(10, 20)} />
+                        
                     </div>
                 </div>
             </div>
