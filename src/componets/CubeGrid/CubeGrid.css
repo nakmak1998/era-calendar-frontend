@@ -73,7 +73,8 @@
     width: 100vw;
     height: 100vw;
     transform: translateY(-50vw) rotateX(90deg);
-    background-color:rgb(8, 24, 248);
+    background: #ffffff url("/public/era_star.png") center center no-repeat;
+    background-size: contain;
 }
 
 
