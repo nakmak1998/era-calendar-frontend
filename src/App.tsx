@@ -4,7 +4,8 @@ import CubeGrid  from './componets/CubeGrid';
 import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
 import Grid from './componets/MainGrid';
 import Calendar from './componets/Calendar';
-import { getFirstWeekDayMonth } from "./utils/date-utils";
+import Events from './componets/Events';
+import Covid from './componets/Covid';
 
 interface AppProps{
 
@@ -23,14 +24,13 @@ export default class App extends React.Component<AppProps,AppState>{
 
     }
     public componentDidMount():void{
-        console.log(getFirstWeekDayMonth(new Date()));
     }
     public render():React.ReactNode{
         return <div className="appFrame">
             <Router>
                 <Switch>
-                    <Route exact path="/cube"  render={()=><CubeGrid front={<Calendar/>}/>} />
-                    <Route exact path="/" component={Calendar}/>
+                    <Route exact path="/cube"  render={()=><CubeGrid front={<Calendar/>} right={<Events/>} left={<Covid/>} />} />
+                    <Route exact path="/" component={Covid}/>
                 </Switch>
             </Router>
             </div>

@@ -1,6 +1,6 @@
 
 export async function downloadHtml(url) {
-    let resposnse = await fetch(url);
+    let resposnse = await fetch(url, {mode:'cors'});
     return await resposnse.text()
 };
 export const getDocument = (text) => {
@@ -26,33 +26,42 @@ export const extractEvents = (text) => {
     return events
 };
 
-export const url = 'https://www.era-tehnopolis.ru/events/?time=future';
-export const defaultEvents = [
-    {
-        title: 'II Всероссийская научно-техническая конференция «Состояние и перспективы развития современной науки по направлению «Технологии энергообеспечения. Аппараты и машины жизнеобеспечения»',
-        date: '17 сентября 2020г.',
-        time: '10:00 - 17:30',
-    },
-    {
-        title: 'V Военно-научная конференция "Роботизация Вооруженных Сил Российской Федерации"',
-        date: '29 июля 2020г. - 30 июля 2020г.',
-        time: '9:00 - 17:00',
-    },
-    {
-        title: 'II Всероссийская научно-техническая конференция «Состояние и перспективы развития современной науки по направлению «АСУ, информационно-телекоммуникационные системы»',
-        date: '18 июня 2020г.',
-        time: '9:00 - 17:40',
-    },
-]
+export async function getEvents(time = 'future') {
+    const URL = `https://www.era-tehnopolis.ru/events/?time=${time}`;
+    const DEFAULT_PAST_EVENTS = [
+        {
+            title: 'II Всероссийская научно-техническая конференция «Состояние и перспективы развития современной науки по направлению «Технологии энергообеспечения. Аппараты и машины жизнеобеспечения»',
+            date: '17 сентября 2020г.',
+            time: '10:00 - 17:30',
+        },
+        {
+            title: 'V Военно-научная конференция "Роботизация Вооруженных Сил Российской Федерации"',
+            date: '29 июля 2020г. - 30 июля 2020г.',
+            time: '9:00 - 17:00',
+        },
+        {
+            title: 'II Всероссийская научно-техническая конференция «Состояние и перспективы развития современной науки по направлению «АСУ, информационно-телекоммуникационные системы»',
+            date: '18 июня 2020г.',
+            time: '9:00 - 17:40',
+        },
+    ]
 
-export async function getEvents() {
+    const DEFAULT_FUTURE_EVENTS = [
+        {
+            title: 'II Научно-техническая конференция «Состояние и перспективы развития современной науки по направлению «Техническое зрение и распознавание образов»',
+            date: '22 октября 2020г.',
+            time: '10:00 - 17:00',
+        },
+    ]
+
+
     try {
-        const html = await downloadHtml(url);
+        const html = await downloadHtml(URL);
         const events = getEvents(html);
         return events;
     } catch (error) {
         console.log(error)
-        return defaultEvents;
+        return time === 'past' ? DEFAULT_PAST_EVENTS : DEFAULT_FUTURE_EVENTS;
     }
 }
 

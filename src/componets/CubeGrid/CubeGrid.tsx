@@ -95,8 +95,8 @@ class Cube extends React.Component<CubeProps,CubeState>
                         }} >
                         <div className="cube__face--front">{front}</div>
                         <div className="cube__face--back"></div>
-                        <div className="cube__face--right"></div>
-                        <div className="cube__face--left"></div>
+                        <div className="cube__face--right">{right}</div>
+                        <div className="cube__face--left">{left}</div>
                         <div className="cube__face--top"></div>
                     </div>
                 </div>
