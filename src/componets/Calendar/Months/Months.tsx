@@ -1,5 +1,5 @@
 import React from 'react';
-import dateFns from "date-fns";
+import dateFns from 'date-fns';
 import ru from 'date-fns/locale/ru';
 import './Months.css';
 

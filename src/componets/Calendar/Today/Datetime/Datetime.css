@@ -1,0 +1,20 @@
+.datetime {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.datetime .date {
+    font-size: 300px;
+    margin-bottom: -50px;
+}
+
+.datetime .name-day {
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 100px;
+}
+
+.datetime .time {
+    font-size: 150px;
+}
