@@ -107,7 +107,6 @@ class Months extends React.Component<MonthsProps, MonthsState> {
             )
             days = [];
         }
-        console.log(rows)
         return <div className='body'>{rows}</div>;
     }
 

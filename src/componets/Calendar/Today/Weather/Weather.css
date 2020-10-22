@@ -1,0 +1,10 @@
+.weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather .degree {
+    font-size: 50px;
+}
