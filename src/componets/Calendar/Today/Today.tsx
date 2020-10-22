@@ -1,6 +1,7 @@
 import React from 'react';
 import './Today.css';
-import Datetime from './Datetime'
+import Datetime from './Datetime';
+import Weather from './Weather';
 
 interface TodayProps {
 
@@ -13,6 +14,7 @@ class Today extends React.Component<TodayProps> {
     public render(): React.ReactNode {
         return (
             <div className='today'>
+                <Weather />
                 <Datetime />
             </div>
         );
