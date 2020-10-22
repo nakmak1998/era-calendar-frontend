@@ -49,9 +49,9 @@ class Months extends React.Component<MonthsProps, MonthsState> {
                     <img src='/arrow.png' className='icon prev' onClick={this.prevMonth} />
                 </div>
                 <div className='col col-center'>
-                    <span>
+                    <div>
                         {dateFns.format(this.state.currentMonth, dateFormat, this.formatOptions)}
-                    </span>
+                    </div>
                 </div>
                 <div className='col col-end'>
                     <img src='/arrow.png' className='icon' onClick={this.nextMonth} />

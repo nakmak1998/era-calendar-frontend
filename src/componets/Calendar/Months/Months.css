@@ -65,13 +65,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
 
 .col {
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
+    min-width: 100px;
 }
 
 .col-start {
@@ -82,6 +81,9 @@
 .col-center {
     justify-content: center;
     text-align: center;
+}
+.col-center div {
+    width: 450px;
 }
 
 .col-end {
