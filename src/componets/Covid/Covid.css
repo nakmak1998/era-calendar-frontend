@@ -26,13 +26,14 @@
 
 .covidContainer > .common-info {
     grid-area: covid-common-info;
-    background-color: white;
-    color: black;
+    /* background-color: white;
+    color: black; */
+    /* box-shadow: rgba(240, 238, 238, 0.63) 0 4px 20px; */
+    color: white;
     width: 50%;
     border-radius: 10px;
     justify-self: center;
     padding: 30px;
-    box-shadow: rgba(240, 238, 238, 0.63) 0 4px 20px;
 }
 
 .common-info-item  > .item-space {
@@ -40,6 +41,7 @@
 }
 .common-info-item  > .item-desc {
     color: rgba(26, 24, 24, 0.92);
+    color: white
 }
 
 .covidContainer .common-info-items {
@@ -71,13 +73,14 @@
 }
 
 .covidContainer .region-info {
-    background-color: white;
-    color: black;
+    /* background-color: white; */
+    /* color: black; */
+    /* box-shadow: rgba(240, 238, 238, 0.63) 0 4px 20px; */
+    color: white;
     width: 50%;
     border-radius: 10px;
     justify-self: center;
     padding: 30px;
-    box-shadow: rgba(240, 238, 238, 0.63) 0 4px 20px;
     font-size: 20px;
 }
 
