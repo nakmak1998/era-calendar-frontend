@@ -1,4 +1,23 @@
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik'), url('../assets/fonts/static/Rubik-Light.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik'), url('../assets/fonts/static/Rubik-Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik'), url('../assets/fonts/static/Rubik-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
 
 
 .appFrame{

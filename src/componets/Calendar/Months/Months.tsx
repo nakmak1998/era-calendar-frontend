@@ -42,7 +42,7 @@ class Months extends React.Component<MonthsProps, MonthsState> {
     }
 
     public renderHeader(): React.ReactNode {
-        const dateFormat = 'MMMM';
+        const dateFormat = 'MMMM YYYY';
         return (
             <div className='header row'>
                 <div className='col col-start'>
@@ -61,12 +61,12 @@ class Months extends React.Component<MonthsProps, MonthsState> {
     }
 
     public renderDaysWeek(): React.ReactNode {
-        const dateFormat = 'dddd';
+        const dateFormat = 'dd';
         const days = [];
         let startDate = dateFns.startOfWeek(this.state.currentMonth, this.formatOptions)
         for (let i = 0; i < 7; i++) {
             days.push(
-                <div className='col col-center' key={i}>
+                <div className='col col-center day-name' key={i}>
                     {dateFns.format(dateFns.addDays(startDate, i), dateFormat, this.formatOptions)}
                 </div>
             )
@@ -95,7 +95,7 @@ class Months extends React.Component<MonthsProps, MonthsState> {
 
                 days.push(
                     <div className={`col cell ${cellClass}`} >
-                        <span className='day'>{formattedDate}</span>
+                        <div className='day'>{formattedDate}</div>
                     </div>
                 );
                 day = dateFns.addDays(day, 1)
