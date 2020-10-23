@@ -48,7 +48,7 @@
     position:absolute;
     width: 100vw;
     min-height: 100vh;
-    transform: translateZ(-50vw);
+    transform: translateZ(-50vw) rotateY(180deg);
     background-color: yellow;
 }
 

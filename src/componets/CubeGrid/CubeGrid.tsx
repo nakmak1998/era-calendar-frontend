@@ -94,7 +94,7 @@ class Cube extends React.Component<CubeProps,CubeState>
                         { transform:`rotateY(${angle}deg)`
                         }} >
                         <div className="cube__face--front">{front}</div>
-                        <div className="cube__face--back"></div>
+                        <div className="cube__face--back">{back}</div>
                         <div className="cube__face--right">{right}</div>
                         <div className="cube__face--left">{left}</div>
                         <div className="cube__face--top"></div>

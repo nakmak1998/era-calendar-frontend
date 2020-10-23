@@ -6,6 +6,7 @@ import Grid from './componets/MainGrid';
 import Calendar from './componets/Calendar';
 import Events from './componets/Events';
 import Covid from './componets/Covid';
+import News from './componets/News';
 
 interface AppProps{
 
@@ -29,8 +30,8 @@ export default class App extends React.Component<AppProps,AppState>{
         return <div className="appFrame">
             <Router>
                 <Switch>
-                    <Route exact path="/cube"  render={()=><CubeGrid front={<Calendar/>} right={<Events/>} left={<Covid/>} />} />
-                    <Route exact path="/" component={Events}/>
+                    <Route exact path="/cube"  render={()=><CubeGrid front={<Calendar/>} right={<Events/>} left={<Covid/>} back={<News />} />} />
+                    <Route exact path="/" component={News}/>
                 </Switch>
             </Router>
             </div>
