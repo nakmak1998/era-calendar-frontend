@@ -1,3 +1,3 @@
-import T from './Event';
+import { Event, EventData } from './Event';
 
-export default T;
+export { Event, EventData };

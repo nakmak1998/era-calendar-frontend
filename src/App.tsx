@@ -30,7 +30,7 @@ export default class App extends React.Component<AppProps,AppState>{
             <Router>
                 <Switch>
                     <Route exact path="/cube"  render={()=><CubeGrid front={<Calendar/>} right={<Events/>} left={<Covid/>} />} />
-                    <Route exact path="/" component={Calendar}/>
+                    <Route exact path="/" component={Events}/>
                 </Switch>
             </Router>
             </div>

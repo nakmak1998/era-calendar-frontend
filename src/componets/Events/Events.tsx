@@ -1,18 +1,14 @@
 import React from 'react';
 
 import { getEvents } from '../../helpers/event';
+import {EventData, Event} from './Event'
+import './Events.css';
 
-// www.era-tehnopolis.ru - запрещает запросы к себе
-
-interface Event {
-    title: string,
-    date: string,
-    time: string,
-}
+// www.era-tehnopolis.ru - запрещает запросы к себе [CORS]
 
 interface EventsState {
-    futureEvents:Event[],
-    pastEvents:Event[],
+    futureEvents:EventData[],
+    pastEvents:EventData[],
 }
 
 interface EventsProps {
@@ -32,17 +28,18 @@ class Events extends React.Component<EventsProps, EventsState> {
             futureEvents: await getEvents('future'),
             pastEvents: await getEvents('past'),
         })
-        console.log(this.state.futureEvents)
-        console.log(this.state.pastEvents)
     }
     public render() : React.ReactNode {
         return (
-            <div>
-                Events
-                <div>
-                    {this.state.futureEvents.map(el => (
-                        <p key={el.time}>{el.title}</p>
-                    ))}
+            <div className='events'>
+                <div className='header'>События технополиса "ЭРА"</div>
+                <div className='col-first styles'>
+                    <div className='col-title'>Грядущие события</div>
+                    <Event events={this.state.futureEvents.slice(0, 5)} />
+                </div>
+                <div className='col-second styles'>
+                    <div className='col-title'>Прошедшие события</div>
+                    <Event events={this.state.pastEvents.slice(0, 5)} />
                 </div>
             </div>
         );

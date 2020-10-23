@@ -19,7 +19,7 @@ class Region extends React.Component<RegionProps> {
     public render(): React.ReactNode {
         return (
             <div>
-                {this.props.infectedByRegion.slice(0, 10).map(el => (
+                {this.props.infectedByRegion.map(el => (
                     <div className='region' key={el.region}>
                         <div className='region-title'>{el.region}</div>
                         <div className='region-data'>{el.infected}</div>
