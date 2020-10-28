@@ -1,7 +1,7 @@
 import React from 'react';
 import getDataFromWeather from '../../../../helpers/weather-api';
 import './Weather.css';
-import cloudSrc from '../../../../../assets/cloud03@4x.png'
+import cloudSrc from '../../../../../assets/cloud03d@4x.png'
 
 interface WeatherState {
     temperature?: number,

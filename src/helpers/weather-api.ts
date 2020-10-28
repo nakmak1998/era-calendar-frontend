@@ -1,4 +1,3 @@
-import Axios from 'axios';
 const WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather';
 const WEATHER_PARAMS = {
     q: 'Anapa,ru',
