@@ -1,6 +1,7 @@
 import React from 'react';
 import getDataFromWeather from '../../../../helpers/weather-api';
 import './Weather.css';
+import cloudSrc from '../../../../../assets/cloud03@4x.png'
 
 interface WeatherState {
     temperature?: number,
@@ -17,7 +18,7 @@ class Weather extends React.Component<WeatherProps, WeatherState> {
         super(props)
         this.state = {
             temperature: 0,
-            iconUrl: '/cloud03d@4x.png',
+            iconUrl: cloudSrc,
         }
     }
     public async componentDidMount(): Promise<void> {

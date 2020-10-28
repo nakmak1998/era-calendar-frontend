@@ -35,7 +35,7 @@ module.exports={
     devtool:"inline-source-map",
     output: {
         path: BUILD_PATH,
-        publicPath: "/",
+        publicPath: "",
         filename: "[name].[hash:8].js",
 
     },
@@ -59,6 +59,10 @@ module.exports={
                     test: /\.(png|jpe?g|gif)$/i,
                     use: [
                             {
+                                options: {
+                                    name: "[name].[ext]",
+                                    outputPath: "images/"
+                                },
                                 loader:'file-loader'
                             }
                     ]

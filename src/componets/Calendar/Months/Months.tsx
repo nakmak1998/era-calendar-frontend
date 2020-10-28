@@ -2,7 +2,7 @@ import React from 'react';
 import dateFns from 'date-fns';
 import ru from 'date-fns/locale/ru';
 import './Months.css';
-
+import arrowSrc from './../../../../assets/arrow.png';
 
 interface MonthsProps {
 
@@ -46,7 +46,7 @@ class Months extends React.Component<MonthsProps, MonthsState> {
         return (
             <div className='header row'>
                 <div className='col col-start'>
-                    <img src='/arrow.png' className='icon prev' onClick={this.prevMonth} />
+                    <img src={arrowSrc} className='icon prev' onClick={this.prevMonth} />
                 </div>
                 <div className='col col-center'>
                     <div>
@@ -54,7 +54,7 @@ class Months extends React.Component<MonthsProps, MonthsState> {
                     </div>
                 </div>
                 <div className='col col-end'>
-                    <img src='/arrow.png' className='icon' onClick={this.nextMonth} />
+                    <img src={arrowSrc} className='icon' onClick={this.nextMonth} />
                 </div>
             </div>
         );
