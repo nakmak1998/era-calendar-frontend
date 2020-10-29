@@ -1,5 +1,5 @@
-
-
+/*
+ вращающийся куб
 
 :root{
     --translate-top-z:calc(100vw-(100vh));
@@ -10,7 +10,7 @@
   height: 100vh;
   position: absolute;
   transform-style: preserve-3d;
-  perspective:2000px /*2000px*/;
+  perspective:2000px ;
   perspective-origin: center -10%;
 }
 
@@ -18,7 +18,8 @@
     width: 100vw;
     height: 100vh;
     transform-style: preserve-3d;
-    position: absolute;
+    transition: transform 3s;
+    text-align: center;
 }
 
 
@@ -77,11 +78,88 @@
     background-size: contain;
 }
 
+*/
 
 
+/* куб с анимацией отдаление-поворот-приближение */
 
+.scene {
+    perspective: 1200px;
+}
 
+.cubeWrapper {
+    transform-style: preserve-3d;
+    transform: translateY(-50vh) translateZ(-50vw);
+    transition: transform 1s;
+}
 
+.cube {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 3s;
+    text-align: center;
+}
 
+.cube__face {
+    position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2c2c2c;  
+  transform: rotateY(  0deg) translateZ(50vw) translateY(50vh);
+}
 
+.cube__face--front {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    transform: rotateY(  0deg) translateZ(50vw) translateY(50vh);
+}
+
+.cube__face--back {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY(180deg) translateZ(50vw) translateY(50vh);
+    background-color: yellow;
+}
+
+.cube__face--right {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY( 90deg) translateZ(50vw) translateY(50vh);
+    background-color: lightgreen;
+}
+
+.cube__face--left {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY( -90deg) translateZ(50vw) translateY(50vh);
+    background-color: rgb(250, 176, 16);
+}
+
+.cube__face--top {
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    transform: translateY(-50vw) rotateX(90deg) translateZ(-50vh);
+    background: #ffffff url("/public/era_star.png") center center no-repeat;
+    background-size: contain;
+}
+
+.clear-rotate {
+    transition: transform 0s;
+}
+
+.camera-move {
+    transform: translateZ(-150vw) rotateX(-3deg);
+}
+
+.show-front  { transform: rotateY(   0deg); }
+.show-right  { transform: rotateY( -90deg); }
+.show-back   { transform: rotateY(-180deg); }
+.show-left   { transform: rotateY(-270deg); }
+.show-front2 { transform: rotateY(-360deg); }
 

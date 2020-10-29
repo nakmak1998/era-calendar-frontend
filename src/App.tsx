@@ -1,40 +1,41 @@
 import React from 'react';
 import "./App.css";
-import CubeGrid  from './componets/CubeGrid';
-import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
+import CubeGrid from './componets/CubeGrid';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Grid from './componets/MainGrid';
 import Calendar from './componets/Calendar';
 import Events from './componets/Events';
 import Covid from './componets/Covid';
 import News from './componets/News';
 
-interface AppProps{
+interface AppProps {
 
 }
 
-interface AppState{
+interface AppState {
 
 }
 
 
-export default class App extends React.Component<AppProps,AppState>{
-    constructor(props:AppProps){
+export default class App extends React.Component<AppProps, AppState>{
+    constructor(props: AppProps) {
         super(props);
     }
-    public static defaultProps:AppProps={
+    public static defaultProps: AppProps = {
 
     }
-    public componentDidMount():void{
+    public componentDidMount(): void {
     }
-    public render():React.ReactNode{
+    public render(): React.ReactNode {
         return <div className="appFrame">
-            <Router>
+            <CubeGrid front={<Calendar />} right={<Events />} left={<Covid />} back={<News />} />
+            {/* <Router>
                 <Switch>
-                    <Route exact path="/cube"  render={()=><CubeGrid front={<Calendar/>} right={<Events/>} left={<Covid/>} back={<News />} />} />
-                    <Route exact path="/" component={News}/>
+                    <Route exact path="/cube" render={() => <CubeGrid front={<Calendar />} right={<Events />} left={<Covid />} back={<News />} />} />
+                    <Route exact path="/" component={News} />
                 </Switch>
-            </Router>
-            </div>
+            </Router> */}
+        </div>
 
     }
 }
