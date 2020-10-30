@@ -1,9 +1,10 @@
 import eventSrc from '../../assets/event150.png';
 
 export async function downloadHtml(url) {
-    let resposnse = await fetch(url, {mode:'cors'});
-    return await resposnse.text()
-};
+    let response = await fetch(url, {mode:'cors'});
+    return await response.text()
+}
+
 export const getDocument = (text) => {
     const parser = new DOMParser();
 	return parser.parseFromString(text, 'text/html');
@@ -11,8 +12,8 @@ export const getDocument = (text) => {
 
 export const extractEvents = (text) => {
     const document = getDocument(text);
-    let cards = document.querySelectorAll('a.event_card');
-    let events=[]
+    const cards = document.querySelectorAll('a.event_card');
+    let events = [];
     cards.forEach((card)=>{
             events.push({
                 //image: ...
@@ -24,7 +25,7 @@ export const extractEvents = (text) => {
             });
     });
 
-    return events
+    return events;
 };
 
 export async function getEvents(time = 'future') {
@@ -48,7 +49,7 @@ export async function getEvents(time = 'future') {
             date: '18 июня 2020г.',
             time: '9:00 - 17:40',
         },
-    ]
+    ];
 
     const DEFAULT_FUTURE_EVENTS = [
         {
@@ -57,13 +58,12 @@ export async function getEvents(time = 'future') {
             date: '22 октября 2020г.',
             time: '10:00 - 17:00',
         },
-    ]
+    ];
 
 
     try {
         const html = await downloadHtml(URL);
-        const events = getEvents(html);
-        return events;
+        return extractEvents(html);
     } catch (error) {
         console.log(error)
         return time === 'past' ? DEFAULT_PAST_EVENTS : DEFAULT_FUTURE_EVENTS;
